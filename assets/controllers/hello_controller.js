@@ -1,4 +1,6 @@
 import { Controller } from '@hotwired/stimulus';
+import { Editor } from '@tiptap/core'
+import StarterKit from '@tiptap/starter-kit'
 
 /*
  * This is an example Stimulus controller!
@@ -10,17 +12,30 @@ import { Controller } from '@hotwired/stimulus';
  * Delete this file or adapt it for your use!
  */
 export default class extends Controller {
-    static targets = ['stuffHolder'];
-
-    connect() {
-        const divElement = document.createElement('div');
-        divElement.innerText = 'Hello Stimulus! Edit me in assets/controllers/hello_controller.js';
-        this.element.prepend(divElement);
+    static targets = ['input'];
+    static values = {
+        content: String,
     }
 
-    addStuff() {
-        const divElement = document.createElement('div');
-        divElement.innerText = 'More stuff!';
-        this.stuffHolderTarget.appendChild(divElement);
+    connect() {
+        this.editor = new Editor({
+            element: this.inputTarget,
+
+            content: this.contentValue,
+
+            extensions: [
+                StarterKit.configure({
+                    heading: {
+                        levels: [1, 2, 3],
+                    },
+                }),
+            ],
+        })
+    }
+
+    bold(e) {
+        e.preventDefault()
+
+        this.editor.chain().focus().toggleBold().run()
     }
 }

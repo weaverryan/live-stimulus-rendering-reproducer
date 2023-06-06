@@ -24,4 +24,10 @@ return [
     '@symfony/stimulus-bundle' => [
         'path' => '@symfony/stimulus-bundle/loader.js',
     ],
+    '@tiptap/core' => [
+        'url' => 'https://cdn.jsdelivr.net/npm/@tiptap/core@2.0.3/+esm',
+    ],
+    '@tiptap/starter-kit' => [
+        'url' => 'https://cdn.jsdelivr.net/npm/@tiptap/starter-kit@2.0.3/+esm',
+    ],
 ];

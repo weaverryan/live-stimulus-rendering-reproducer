@@ -5,9 +5,14 @@
 
     <hr>
 
-    <div {{ stimulus_controller('hello') }}>
-        <button {{ stimulus_action('hello', 'addStuff') }}>Add Stuff</button>
-
-        <div {{ stimulus_target('hello', 'stuffHolder') }} style="border: 1px solid green; padding: 5px; border-radius: 3px; margin-top: 10px; width: 200px;"></div>
+    <div {{ stimulus_controller('hello', {
+        content: this.editorContent
+    }) }}>
+        <div>
+            <button {{ stimulus_action('hello', 'bold') }}>Bold</button>
+        </div>
+        <div
+            {{ stimulus_target('hello', 'input') }}
+        ></div>
     </div>
 </div>
