@@ -10,15 +10,17 @@ import { Controller } from '@hotwired/stimulus';
  * Delete this file or adapt it for your use!
  */
 export default class extends Controller {
+    static targets = ['stuffHolder'];
+
     connect() {
         const divElement = document.createElement('div');
         divElement.innerText = 'Hello Stimulus! Edit me in assets/controllers/hello_controller.js';
-        this.element.appendChild(divElement);
+        this.element.prepend(divElement);
     }
 
     addStuff() {
         const divElement = document.createElement('div');
         divElement.innerText = 'More stuff!';
-        this.element.appendChild(divElement);
+        this.stuffHolderTarget.appendChild(divElement);
     }
 }

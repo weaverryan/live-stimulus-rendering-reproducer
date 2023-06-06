@@ -6,6 +6,8 @@
     <hr>
 
     <div {{ stimulus_controller('hello') }}>
-         <button {{ stimulus_action('hello', 'addStuff') }}>Add Stuff</button>
+        <button {{ stimulus_action('hello', 'addStuff') }}>Add Stuff</button>
+
+        <div {{ stimulus_target('hello', 'stuffHolder') }} style="border: 1px solid green; padding: 5px; border-radius: 3px; margin-top: 10px; width: 200px;"></div>
     </div>
 </div>
