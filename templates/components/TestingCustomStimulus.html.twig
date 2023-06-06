@@ -5,7 +5,7 @@
 
     <hr>
 
-    <div{{ stimulus_controller('hello') }}>
-        The normal content from Twig
+    <div {{ stimulus_controller('hello') }}>
+         <button {{ stimulus_action('hello', 'addStuff') }}>Add Stuff</button>
     </div>
 </div>

@@ -11,6 +11,14 @@ import { Controller } from '@hotwired/stimulus';
  */
 export default class extends Controller {
     connect() {
-        this.element.textContent = 'Hello Stimulus! Edit me in assets/controllers/hello_controller.js';
+        const divElement = document.createElement('div');
+        divElement.innerText = 'Hello Stimulus! Edit me in assets/controllers/hello_controller.js';
+        this.element.appendChild(divElement);
+    }
+
+    addStuff() {
+        const divElement = document.createElement('div');
+        divElement.innerText = 'More stuff!';
+        this.element.appendChild(divElement);
     }
 }
