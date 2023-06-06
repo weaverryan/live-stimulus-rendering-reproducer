@@ -1,3 +1,11 @@
 <div{{ attributes }}>
-    <!-- component html -->
+    <input type="number" data-model="counter">
+    <br>
+    Count: {{ counter }}
+
+    <hr>
+
+    <div{{ stimulus_controller('hello') }}>
+        The normal content from Twig
+    </div>
 </div>
