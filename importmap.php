@@ -21,4 +21,7 @@ return [
     '@hotwired/stimulus' => [
         'url' => 'https://cdn.jsdelivr.net/npm/@hotwired/stimulus@3.2.1/+esm',
     ],
+    '@symfony/stimulus-bundle' => [
+        'path' => '@symfony/stimulus-bundle/loader.js',
+    ],
 ];
